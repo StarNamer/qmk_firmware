@@ -12,18 +12,22 @@ static bool colABPressed   = false;
 static bool encoderPressed = false;
 
 void clicked(void) {
-    tap_code(KC_MPLY);
+    if (IS_LAYER_ON(3)) {
+        tap_code(KC_MPLY);
+    } else {
+        tap_code(KC_MUTE);
+    }
 }
 
 void turned(bool clockwise) {
-    if (IS_LAYER_ON(6)) {
-        tap_code(clockwise ? KC_VOLU : KC_VOLD);
+    if (IS_LAYER_ON(1)) {
+        tap_code16(clockwise ? KC_PGDN : KC_PGUP);
     } else if (IS_LAYER_ON(3)) {
         tap_code16(clockwise ? LCTL(KC_TAB) : LCTL(LSFT(KC_TAB)));
     } else if (IS_LAYER_ON(5)) {
         tap_code16(clockwise ? LGUI(KC_Y) : LGUI(KC_Z));
     } else {
-        tap_code16(clockwise ? KC_PGDN : KC_PGUP);
+        tap_code(clockwise ? KC_VOLU : KC_VOLD);
     }
 }
 

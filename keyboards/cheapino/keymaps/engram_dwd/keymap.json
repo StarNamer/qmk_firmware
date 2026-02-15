@@ -1,0 +1,6 @@
+{
+    "modules": [
+        "qmk/hello_world",
+        "getreuer/orbital_mouse"
+    ]
+}
