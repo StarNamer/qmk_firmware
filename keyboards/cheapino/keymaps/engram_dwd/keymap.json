@@ -1,6 +1,7 @@
 {
     "modules": [
         "qmk/hello_world",
-        "getreuer/orbital_mouse"
+        "getreuer/orbital_mouse",
+        "drashna/rtc"
     ]
 }
